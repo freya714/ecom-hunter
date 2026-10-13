@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ecom-hunter"
+version = "0.1.0"
+description = "多平台电商数据采集与智能分析框架（拼多多 / 淘宝 / 京东 / 抖音）"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "zhangwt121" }
+]
+keywords = [
+    "ecommerce", "scraper", "crawler", "data-analysis",
+    "pinduoduo", "taobao", "jd", "douyin", "电商", "数据采集"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries",
+]
+
+dependencies = [
+    "playwright>=1.40.0",
+    "requests>=2.31.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+    "streamlit>=1.30.0",
+    "pydantic>=2.5.0",
+    "loguru>=0.7.0",
+    "lxml>=4.9.0",
+    "beautifulsoup4>=4.12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/zhangwt121/ecom-hunter"
+Documentation = "https://github.com/zhangwt121/ecom-hunter#readme"
+Issues = "https://github.com/zhangwt121/ecom-hunter/issues"
+
+[tool.setuptools.packages.find]
+include = ["ecom_hunter*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --strict-markers"
+markers = [
+    "slow: 标记慢速测试（需要真实网络）",
+    "integration: 需要真实登录态的集成测试",
+]

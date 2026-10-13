@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# 测试与覆盖率
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 采集数据输出
+*.csv
+*.xlsx
+data/
+output/
+trend.png
+top.png
+
+# 日志
+*.log
+
+# 登录态与浏览器 profile（含敏感信息，勿提交）
+~/.ecom-hunter/
+.ecom-hunter/
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
+# 配置文件（含账号密码时切勿提交）
+config.yaml
+*.local.json
