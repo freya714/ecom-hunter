@@ -30,19 +30,23 @@ classifiers = [
 ]
 
 dependencies = [
-    "playwright>=1.40.0",
-    "requests>=2.31.0",
-    "pandas>=2.0.0",
-    "numpy>=1.24.0",
-    "matplotlib>=3.7.0",
-    "streamlit>=1.30.0",
     "pydantic>=2.5.0",
     "loguru>=0.7.0",
-    "lxml>=4.9.0",
-    "beautifulsoup4>=4.12.0",
+    "pandas>=2.0.0",
 ]
 
 [project.optional-dependencies]
+scrape = [
+    "playwright>=1.40.0",
+    "requests>=2.31.0",
+    "lxml>=4.9.0",
+    "beautifulsoup4>=4.12.0",
+]
+viz = [
+    "matplotlib>=3.7.0",
+    "streamlit>=1.30.0",
+    "numpy>=1.24.0",
+]
 dev = [
     "pytest>=7.4.0",
     "pytest-cov>=4.1.0",
@@ -50,6 +54,7 @@ dev = [
     "ruff>=0.1.0",
     "mypy>=1.7.0",
 ]
+all = ["ecom-hunter[scrape,viz,dev]"]
 
 [project.urls]
 Homepage = "https://github.com/zhangwt121/ecom-hunter"
