@@ -16,10 +16,10 @@ env/
 .coverage
 htmlcov/
 
-# 采集数据输出
+# 采集数据输出（仅忽略根目录下的 data/ 输出目录）
+/data/
 *.csv
 *.xlsx
-data/
 output/
 trend.png
 top.png
